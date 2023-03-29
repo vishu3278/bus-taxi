@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking app</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/brands.min.css" rel="stylesheet">
+    <link href="css/solid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/taxi-style.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="mobile-header d-flex d-lg-none">
+            <div class="dropdown flex-fill">
+                <a class="btn w-100 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Call Now
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">+91 9876543210</a></li>
+                    <li><a class="dropdown-item" href="#">+91 9876543100</a></li>
+                    <li><a class="dropdown-item" href="#">+91 9857564125</a></li>
+                </ul>
+            </div>
+            <a href="https://api.whatsapp.com/send?phone=919354860010&amp;text=Hello Team Bus &amp; Taxi, I am interested in cabs service. Please chat with me." class="btn btn-success flex-fill"><i class="fa-brands fa-whatsapp"></i> Chat</a>
+            <button type="button" class="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target="#callbackModal">Call Me Back</button>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col logo-wrapper">
+                    <a class="logo-wrap" href="/">
+                        <img class="logo img-fluid" src="images/logo.png" alt="taxi">
+                        <!-- <img class="logoex img-fluid" src="images/logo2.jpg" alt="taxi"> -->
+                    </a>
+                </div>
+                <div class="col head-act-wrapper">
+                    <div class="head-act-wrap">
+                        <div class="head-phone-wrap "><i class="fa-brands fa-whatsapp"></i> <a target="_blank" href="https://web.whatsapp.com/send?phone=919354860010&amp;text=Hello Team Bus & Taxi, I am interested in taxi service. Please chat with me." class="">Whatsapp </a></div>
+                        <div class="head-phone-wrap "><i class="fa-regular fa-phone"></i> <a href="tel:+919999955712" class="">+91 9999 955 712</a></div>
+                        <div class="head-phone-wrap "><i class="fa-regular fa-phone"></i> <a href="tel:+918800550676" class="">+91 8800 550 676</a></div>
+                        <div class="head-enq-wrap ">
+                            <button type="button" class="headEnq-btn " data-bs-toggle="modal" data-bs-target="#callbackModal">Call Me Back</button></div>
+                        <div class="navbar-wrap ">
+                            <button class="navbar btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidenav" aria-controls="sidenav"><i class="fa-regular fa-bars fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="sidenav" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header ">
+                <!-- <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5> -->
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ">
+                <div class="nav-wrap">
+                    <div class="nav-listWrap list-group list-group-flush">
+                        <a class="list-group-item list-group-item-action" href="/">Home</a>
+                        <a class="list-group-item list-group-item-action" href="/about-us">About us</a>
+                        <a class="list-group-item list-group-item-action" href="/blog">Blog</a>
+                        <a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a>
+                        <a class="list-group-item list-group-item-action" href="/terms-and-conditions">Terms &amp; Conditions</a>
+                        <a class="list-group-item list-group-item-action" href="/booking-and-privacy-policy">Booking &amp; Privacy Policy</a>
+                    </div>
+                    <div class="social-menu mt-3 text-center">
+                        <p class="fs-5">Stay connected</p>
+                        <div class="social-links d-flex align-items-center justify-content-center">
+                            <a href="https://www.facebook.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://pinterest.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-pinterest"></i></a>
+                            <a href="https://www.linkedin.com/company/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://twitter.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="banner-wrapper">
+        <div class="search-wrapper">
+            <div class="container">
+                <!-- Nav tabs -->
+                <ul class="nav mb-2 mb-lg-4" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="cab-tab" data-bs-toggle="tab" data-bs-target="#cab" role="tab" aria-controls="cab" aria-selected="true">One Way</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="taxi-tab" data-bs-toggle="tab" data-bs-target="#taxi" role="tab" aria-controls="taxi" aria-selected="false">Round Trip</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="holiday-tab" data-bs-toggle="tab" data-bs-target="#holiday" role="tab" aria-controls="holiday" aria-selected="false">Char Dham</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="cab" role="tabpanel" aria-labelledby="cab-tab">
+                        <form action="" class="row">
+                            <div class="col-md-3">
+                                <div class="frm-lbl mb-2">
+                                    <label class="form-label">Transport Type</label>
+                                    <select name="" class="form-control" id="" required>
+                                        <option value="bus">Bus</option>
+                                        <option value="taxi" selected>Taxi</option>
+                                    </select>
+                                    <!-- <div id="" style="display:none;"></div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="frm-lbl mb-2">
+                                    <label class="form-label">No. of Passengers</label>
+                                    <select name="" class="form-control" id="" required>
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                    <!-- <div id="" style="display:none;"></div> -->
+                                </div>
+                            </div>
+                            <div class=" col-md-3">
+                                <div class="frm-lbl mb-2">
+                                    <label class="form-label">Pickup City</label>
+                                    <input name="" type="text" id="" placeholder="Ex. Delhi" class="form-control  " autocomplete="off">
+                                    <!-- <div id="" style="display:none;"></div> -->
+                                </div>
+                            </div>
+                            <div class=" col-md-3">
+                                <div class="frm-lbl mb-2">
+                                    <label class="form-label">Destination City</label>
+                                    <input name="" type="text" id="" placeholder="Ex. Agra" class="form-control  " autocomplete="off">
+                                    <!-- <div id="" style="display:none;"></div> -->
+                                </div>
+                            </div>
+                            <div class=" col-md-3">
+                                <div class="frm-lbl mb-2">
+                                    <label class="form-label">Trip Date</label>
+                                    <input name="" type="text " id="" placeholder="DD-MM-YYYY" class="form-control hasDatepicker" readonly="">
+                                </div>
+                            </div>
+                            <div id="ContentPlaceHolder1_LeftHeader1_PnlOneWay" class=" col-md-3">
+                                <div class="frm-lbl mb-2">
+                                    <label class="form-label">Enter Phone No </label>
+                                    <input name="" type="text" maxlength="10" id="" autocomplete="off" placeholder="eg. 9999955712" pattern="[0-9]*" onpaste="return false" class="form-control" onkeypress="return numeralsOnly(event)" inputmode="numeric" oncopy="return false" oncut="return false">
+                                </div>
+                            </div>
+                            <div class="searchb col-12 mt-3">
+                                <button type="submit" name="" id="" class="btn btn-primary px-5">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="taxi" role="tabpanel" aria-labelledby="taxi-tab">...</div>
+                    <div class="tab-pane" id="holiday" role="tabpanel" aria-labelledby="holiday-tab">...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="bestoffer carousel-wrapper py-3">
+            <div class="container">
+                <div class="title text-center">
+                    <button id="btnShowOffer" style="display:none"></button>
+                    <h1>Best Cab service in Gurgaon and Delhi</h1>
+                    <p>Taxi offers city taxis, inter-city cabs, and local cabs at hourly packages.</p>
+                </div>
+                <figure class="text-center">
+                    <img src="images/logo.jpg" class="img-fluid" alt="">
+                </figure>
+                <!-- <div id="bestofferCarousel">
+                    <div class="item ">
+                        <img data-lazy="https://placehold.co/600x400" class="d-block img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img data-lazy="https://placehold.co/600x400/orange/white" class="d-block img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img data-lazy="https://placehold.co/600x400?text=Nitin" class="d-block img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Nitin</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img data-lazy="https://placehold.co/600x400?font=roboto" class="d-block img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Fourth slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <section class="choice-section">
+            <div class="container">
+                <div class="row">
+                    <div class="title text-center">
+                        <h2>Why book on Taxi?</h2>
+                    </div>
+                    <div class="choice-wrapper  ">
+                        <div class="row justify-content-center">
+                            <div class="choice-wrap col-md-4">
+                                <div class="choice-icon"> <i class="fa-regular fa-indian-rupee-sign fa-2xl"></i><!-- <img data-src="/images/rupee.png" src="/images/rupee.png" alt=""> -->
+                                </div>
+                                <div class="choice-title fs-5">Price Transparency</div>
+                                <div class="choice-text"> We make all charges clear to you upfront. No extra charges or hidden fees</div>
+                            </div>
+                            <div class="choice-wrap col-md-4">
+                                <div class="choice-icon"> <i class="fa-regular fa-clock-rotate-left fa-2xl"></i><!-- <img data-src="/images/24.png" src="/images/24.png" alt=""> -->
+                                </div>
+                                <div class="choice-title fs-5">24x7</div>
+                                <div class="choice-text"> Book yourself for the best rates. We're here to help 24x7</div>
+                            </div>
+                            <div class="choice-wrap col-md-4">
+                                <div class="choice-icon"> <i class="fa-regular fa-0 fa-2xl"></i><!-- <img data-src="/images/zero.png" src="/images/zero.png" alt=""> -->
+                                </div>
+                                <div class="choice-title fs-5">Zero Cancellation</div>
+                                <div class="choice-text"> Enjoy zero cancellation benefit subject to Bus & Taxi terms;</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bestoffer aboutbg">
+            <div class="container">
+                <div class="about-right">
+                    <h2 class="text-center">About Bus & Taxi</h2>
+                    <p>We started with the vision of making car rental services easier and affordable.Bus & Taxi offers its customers freedom to choose from a huge fleet of outstation cabs which comprises numerous car-models like Swift-Dzire, Toyota-Etios, Maruti Ertiga, Toyota-Innova, Innova Crysta, Tempo Traveller (12, 15 20 and 25 str) and a many more at unquestionably the cheapest rates in the market. We are actively engaged in offering prompt, effective and end-to-end solution to our clients.</p> <a href="/about-us">Read More </a>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-12 col-sm-auto about-left"><img data-src="images/logo.png" src="images/logo.png" class="img-fluid" alt=""></div>
+                </div> -->
+            </div>
+            <div class="container">
+                <div id="testimonialCarouse" class="testimonial-slider">
+                    <div class="item ">
+                        <img data-lazy="https://placehold.co/100?text=Vineet" class="avatar img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Manish Malhotra</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img data-lazy="https://placehold.co/100/orange/white?text=Nitin" class="avatar img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Nitin</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img data-lazy="https://placehold.co/100?text=Mohit" class="avatar img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Mohit Rajvanshi</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img data-lazy="https://placehold.co/100?font=roboto&text=Vishu" class="avatar img-fluid" alt="...">
+                        <div class="caption ">
+                            <h5>Vishwjaeet</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="seo-section">
+            <div class="container">
+                <div class="row">
+                    <div class="seo-col col-md-4">
+                        <!-- <input type="hidden" name="ctl00$RptrMaiMenuCatgeory$ctl00$hdnCatgeory" id="RptrMaiMenuCatgeory_hdnCatgeory_0" value="1"> -->
+                        <h2>Popular Places To Visit From Delhi</h2>
+                        <ul>
+                            <li><a href="/delhi-to-agra-taxi">Delhi to Agra Taxi</a></li>
+                            <li><a href="/delhi-to-haridwar-taxi">Delhi to Haridwar Taxi</a></li>
+                            <li><a href="/delhi-to-nainital-taxi">Delhi to Nainital Taxi</a></li>
+                            <li><a href="/delhi-to-rishikesh-taxi">Delhi To Rishikesh Taxi</a></li>
+                            <li><a href="/delhi-to-mussoorie-taxi">Delhi To Mussoorie Taxi</a></li>
+                        </ul>
+                    </div>
+                    <div class="seo-col col-md-4">
+                        <!-- <input type="hidden" name="ctl00$RptrMaiMenuCatgeory$ctl01$hdnCatgeory" id="RptrMaiMenuCatgeory_hdnCatgeory_1" value="2"> -->
+                        <h2>Popular Places To Visit From Gurugram</h2>
+                        <ul>
+                            <li><a href="/gurugram-to-dehradun-taxi">Gurugram To Dehradun Taxi</a></li>
+                            <li><a href="/gurgaon-taxi-service">Gurgaon taxi service</a></li>
+                            <li><a href="/gurgaon-taxi">Gurgaon Taxi</a></li>
+                            <li><a href="/gurugram-to-agra-taxi">Gurugram to Agra Taxi</a></li>
+                            <li><a href="/gurugram-to-haridwar-taxi">Gurugram to Haridwar Taxi</a></li>
+                        </ul>
+                    </div>
+                    <div class="seo-col col-md-4">
+                        <!-- <input type="hidden" name="ctl00$RptrMaiMenuCatgeory$ctl02$hdnCatgeory" id="RptrMaiMenuCatgeory_hdnCatgeory_2" value="3"> -->
+                        <h2>Popular Places To Visit From Noida</h2>
+                        <ul>
+                            <li><a href="/noida-to-agra-taxi">Noida to Agra Taxi</a></li>
+                            <li><a href="/noida-to-haridwar-taxi">Noida to Haridwar Taxi</a></li>
+                            <li><a href="/noida-to-nainital-taxi">Noida to Nainital Taxi</a></li>
+                            <li><a href="/noida-to-rishikesh-taxi">Noida To Rishikesh Taxi</a></li>
+                            <li><a href="/noida-to-patiala-taxi">Noida To Patiala Taxi</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="subscribe">
+        <div class="container">
+            <div class="choice-wrapper">
+                <div class="row text-center ">
+                    <div class="choice-wrap col-12 col-md-4">
+                        <div class="choice-icon">
+                            <i class="fa-regular fa-taxi fa-2xl"></i>
+                            <!-- <img src="images/logo2.jpg" class="img-fluid" alt="hire cabs"> -->
+                        </div>
+                        <div class="choice-title fs-5">Browse Taxis</div>
+                        <div class="choice-text">Taxis cabs offers city taxis, inter-city cabs, and local cabs at hourly packages</div>
+                        <div class="choice-act my-2">
+                            <div class="comnActBtn navActBtn"><a href="javascript:void(0);" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#callbackModal">Call Me Back</a> </div>
+                        </div>
+                    </div>
+                    <div class="choice-wrap col-12 col-md-4">
+                        <div class="choice-icon">
+                            <i class="fa-regular fa-newspaper fa-2xl"></i>
+                            <!-- <img src="/images/icons/subscribe-newlatter.png" alt="book cabs"> -->
+                        </div>
+                        <div class="choice-title fs-5">Call Back</div>
+                        <div class="choice-text">Drop your mobile no, We will call you within 30 seconds. </div>
+                        <div class="choice-act my-2">
+                            <form id="Panel1Newsletter" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'BtnSubcribeSumit')">
+                                <div class="input-group ">
+                                    <input name="" type="text" class="form-control" maxlength="10" id="" autocomplete="off" placeholder="Enter Phone No." pattern="[0-9]*" onpaste="return false" class="newsLtr-inpt" onkeypress="return numeralsOnly(event)" inputmode="numeric" oncopy="return false" oncut="return false">
+                                    <button type="submit" name="" onclick="return pagecheckSubscribeMaster();" id="BtnSubcribeSumit" class="btn btn-primary">Call Me</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="choice-wrap col-12 col-md-4">
+                        <div class="choice-icon">
+                            <i class="fa-regular fa-phone-volume fa-2xl"></i>
+                            <!-- <i class="fa-regular fa-circle-phone"></i> -->
+                            <!-- <img src="/images/icons/talk-to-our-travell-expert.png" alt="book taxi online"> -->
+                        </div>
+                        <div class="choice-title fs-5">Contact Us</div>
+                        <div class="choice-text">Delhi, Gurgaon, Noida, Faridabad</div>
+                        <span class="tollfree"><a href="tel:+91918383927223">+91 8383 927 223</a><span style="font-size: 14px; color: #333">,&nbsp;&nbsp;&nbsp;</span><a href="tel:+918800765249">+91 8800 765 249</a></span>
+                        <span class="tollfree"><a href="tel:+919999955712">+91 999 995 5712</a><span style="font-size: 14px; color: #333">,&nbsp;&nbsp;&nbsp;</span><a href="tel:+918800550676">+91 8800 550 676</a></span>
+                        <span class="tollfree"><a href="tel:+918800550901">+91 8800 550 901</a><span style="font-size: 14px; color: #333">,&nbsp;&nbsp;&nbsp;</span><a href="tel:+919354860010">+91 9354 860 010</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-logo mx-auto text-center pt-4"><a href="/">
+                        <img src="images/logo.png" class="img-fluid"></a>
+                </div>
+                <div class="callback">
+                    <i class="fa-regular fa-phone"></i>
+                    <div class="footer-call text-center">
+                        <ul>
+                            <li><a href="tel:+918383927223">+91 8383 927 223</a></li>
+                            <li><a href="tel:+918800765249">+91 8800 765 249</a></li>
+                            <li><a href="tel:+919315590845">+91 9315 590 845</a></li>
+                            <li><a href="tel:+919999955712">+91 9999 955 712</a></li>
+                            <li><a href="tel:+918800550676">+91 8800 550 676</a></li>
+                            <li><a href="tel:+918800550901">+91 8800 550 901</a></li>
+                            <li><a href="tel:+919354860010">+91 9354 860 010</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="social-wrapper pb-3 d-flex justify-content-center align-items-center text-center"><a href="https://www.facebook.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-instagram"></i></a><a href="https://pinterest.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-pinterest"></i></a><a href="https://www.linkedin.com/company/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-linkedin"></i></a><a href="https://twitter.com/taxibook" target="_blank" class="sclIcn"><i class="fa-brands fa-twitter"></i></a></div>
+                <div class="navbottom text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="/">Home</a></li>
+                        <li class="list-inline-item"><a href="/about-us">About</a></li>
+                        <li class="list-inline-item"><a href="/blog">Blogs</a></li>
+                        <li class="list-inline-item"><a href="/contact-us">Contact Us</a></li>
+                        <li class="list-inline-item"><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+                        <li class="list-inline-item"><a href="/booking-and-privacy-policy">Booking &amp; Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar text-center">
+            <div class="copyright">
+                <p class="m-0">©2023 Taxi All Rights Reserved.</p>
+                <!-- <p>Made by Passion <a href="" target="_blank" title=""><img src="/images/icons/ox.png" alt="" class="img-contain"></a></p> -->
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog callback-modal">
+            <div class="modal-content bg-warning">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Call Me Back</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="frmBx nrmQryFrm">
+                        <div class="frm-head">
+                            <p>Fill details or Call us at <a href="tel:+919999955712">+91 999 995 5712</a>, <a href="tel:+918800550676">+91 880 055 0676</a></p>
+                        </div>
+                        <div class="frm-body">
+                            <div class="form-floating mb-3">
+                                <input name="txBookNowinquiryName" type="text" id="txBookNowinquiryName" class="form-control" placeholder="Ramesh" oncopy="return false" onpaste="return false" oncut="return false" autocomplete="off">
+                                <label for="txBookNowinquiryName">Name*</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input name="txBookNowinquiryEmail" type="text" id="txBookNowinquiryEmail" class="form-control" placeholder="rames@email.com" oncopy="return false" onpaste="return false" oncut="return false" autocomplete="off">
+                                <label for="txBookNowinquiryEmail">Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input name="txBookNowinquiryPhone" type="text" maxlength="10" id="txBookNowinquiryPhone" class="form-control" placeholder="98xxx xxxxx" oncopy="return false" onpaste="return false" oncut="return false" autocomplete="off" onkeypress="return numeralsOnly(event)" pattern="[0-9]*" inputmode="numeric">
+                                <label for="txBookNowinquiryPhone">Phone*</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea name="txBookNowinquiryMsg" id="txBookNowinquiryMsg" class="form-control" placeholder="some message"></textarea>
+                                <label for="txBookNowinquiryMsg">Message</label>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" id="btnBookNow" class="btn btn-primary px-5">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/zebra_datepicker.min.css">
+    <script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="js/zebra_datepicker.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.hasDatepicker').Zebra_DatePicker({
+            format: 'd M Y'
+        });
+        $('#testimonialCarouse').slick({
+            dots: true,
+            autoplay: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            lazyLoad: 'ondemand',
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 720,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    });
+    </script>
+</body>
+
+</html>
